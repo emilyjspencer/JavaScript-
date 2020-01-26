@@ -1,6 +1,6 @@
-NOTES
+**NOTES**
 
-Closures
+**Closures**
 
 A closure only exists when an inner function makes use of variables defined
 from an outer function that has returned. 
@@ -14,7 +14,7 @@ on the line that it has been placed
 Inner functions don't remember everything fom outer functions that have returned 
 they only remember the variables that they need.
 
-Example
+**Example**
 
 ```
 
@@ -37,10 +37,14 @@ iq = will return 10
 iq // 10
 
 However, if we try to access name - an error is thrown because it wasn't remembered
+If the inner function does not use the outer variables then it doesn't have access
+to them.
 
 name
+
 VM4047:1 Uncaught ReferenceError: name is not defined
     at eval (eval at Melania (7307106:5), <anonymous>:1:1)
     at Melania (<anonymous>:5:7)
     at <anonymous>:1:14
+
 
