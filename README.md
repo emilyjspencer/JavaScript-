@@ -1,5 +1,199 @@
 # README
 
+**let vs. const**
+
+* Use let if you plan on reassigning a variable
+* Trying to reassign a variable that has been declared with const will result in an error being thrown
+
+**Spread and Rest operators**
+
+* **Spread operator**  ...
+
+* the spread operator can be used to expand arrays and objects - to
+copy arrays or add properties to an object while safely copying that old object
+
+
+* Use of the spread operator with arrays:
+```html
+array1 = [ 1, 4, 5];
+array2 =  [...array1,  1, 2]
+
+/// [1, 4, 5, 1, 2]
+
+```
+
+* Use of the spread operator with objects: 
+
+```html
+
+const object1 = {
+  "name": "Meryl",
+  "occupation": "actress",
+  "nationality": "American"
+}
+
+const object2 = {...object1, numChildren: 4}
+
+console.log(object2)
+
+//  {
+  name: 'Meryl',
+  occupation: 'actress',
+  nationality: 'American',
+  numChildren: 4
+}
+
+```
+
+* **Rest operator** ...
+
+* the rest operator allows us to create functions that take a variable number
+of arguments
+
+```html
+
+const filter = (...args) => {
+  return args.filter(el => el >= 5);
+}
+
+
+console.log(filter(1, 2, 5, 6, 7));
+
+/// [ 5, 6, 7 ]
+
+```
+
+
+**Arrow functions**
+
+* A 'normal' function:
+```html
+function greet(person) {
+console.log("Hello " + person)
+}
+
+greet('Betty');
+// Hello Betty
+```
+
+* Arrow function equivalent:
+```html
+const greet = (person) => {
+    console.log("Hello " + person)
+}
+greet('Betty')
+// Hello Betty
+```
+
+* If we only have **one* argument, the parentheses around it can be omitted
+* If all that the function body contains is a return, the curly braces can be omitted 
+
+```html
+const addTwo = number => number + 2;
+
+addTwo(5)
+// 7
+```
+
+* Classes
+* Introduced with ES6
+```html
+class Person {
+  constructor(name) {
+  this.name = name;
+}
+  sayName() {
+  console.log(this.name);
+}
+}
+
+person = new Person('Emily')
+console.log(person.name)
+// Emily
+
+person.sayName()
+\\ Emily
+
+```
+
+* Classes support inheritance
+* A class that inherits from another can call the superclass methods on its instances
+* super() must be included in the constructor of the subclass
+* super() executes the parent constructor
+
+```html
+class Animal {
+  constructor() {
+this.name = 'Animal';
+}
+
+sayName() {
+return this.name;
+}
+}
+
+class Duck extends Animal {
+constructor() {
+  super()
+this.age = 3;
+}
+
+sayAge() {
+  return this.age;
+}
+}
+
+const duck = new Duck();
+console.log(duck.sayName());
+console.log(duck.sayAge());
+
+// Animal
+// 3
+
+```
+
+// 
+
+person = new Person('bob')
+console.log(person.name)
+
+
+```
+
+ If you have only one argument - you can omit the parentheses around the argument
+
+
+**Destructuring**
+
+* **Array destructuring:**
+
+```html
+[one, two, three] = [ 'a', 'b', 'c']
+console.log(one)
+console.log(two)
+console.log(three)
+
+/// a
+b
+c
+
+
+const letters = ['a', 'b', 'b'];
+[lettera, letterb] = letters;
+console.log(lettera, letterb);
+// ab
+
+```
+
+
+* **Destructuring vs. the spread parameter**
+
+* The spread operator extracts all elements or all properties 
+* Destructuring allows you to extract single elements or single properties and store them 
+in variables
+
+
+
 **Callbacks**
 
 * A callback function is a function that is passed into another function as a parameter and then invoked by that other function
